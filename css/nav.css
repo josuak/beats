@@ -1,13 +1,29 @@
 nav.mobile li {
   display: inline;
-  margin-right: 15px;
   text-transform: uppercase;
   font-size: 18px;
+  padding: 15px;
+  overflow: auto;
+}
+
+nav li:hover {
+  color: #d1af6c;
+  transition: .5s;
+}
+
+#pos-indicator {
+  position: relative;
+  height: 3px;
+  background-color: #d1af6c;
+  width: 100px;
+  transition: .5s;
+  top: 8px;
+  width: 5em;
 }
 
 nav.mobile ul {
   display: block;
-  padding: 0;
+  padding: 12px 0 15px 0;
   margin: 0;
   position: fixed;
   top: 0;
@@ -16,7 +32,9 @@ nav.mobile ul {
   overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
-  width: 100vw;
+  width: 100%;
+  background-color: #233237;
+  color: white;
 }
 
 div#page {
