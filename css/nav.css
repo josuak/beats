@@ -4,11 +4,15 @@ nav.mobile li {
   font-size: 18px;
   padding: 15px;
   overflow: auto;
+  transition: .25s;
 }
 
 nav li:hover {
   color: #d1af6c;
-  transition: .5s;
+}
+
+nav li.active {
+  color: #d1af6c;
 }
 
 #pos-indicator {
@@ -16,7 +20,7 @@ nav li:hover {
   height: 3px;
   background-color: #d1af6c;
   width: 100px;
-  transition: .5s;
+  transition: .25s;
   top: 8px;
   width: 5em;
 }
