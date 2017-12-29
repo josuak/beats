@@ -9,11 +9,11 @@ $(document).on("scroll", function() {
       windowHeight = $(window).innerHeight(),
       documentHeight = $this.height();
 
-  //Check if scroll is induced by a click on the nav 
+  //Check if scroll is induced by a click on the nav if so -> //prevent on.scroll reaction for the scrolling that happens because of the animation.
   if (preventScrollEvent === true) {
     setTimeout(function() {
       preventScrollEvent = false;
-    }, 350);
+    }, 500);
     
   } else {
     
@@ -52,11 +52,13 @@ $(document).on("scroll", function() {
 $navLi.each(function (index) {
   //click event for each navItem
   $(this).on("click", function () {
+    
+    preventScrollEvent = true;
     //animation for scrolling to different sections
     $("html, body").animate({
       //using index to determine target section
       scrollTop: $sections.eq(index).offset().top - (50)
     }, 500);
-    preventScrollEvent = true;
+    $(this).trigger("newActive");
   });
 });
