@@ -1,9 +1,9 @@
 /*jslint browser: true*/
-/*global $, $navLi, $navUl, $indicator, window*/
+/*global $, $navLi, $navUl, $indicator, window, $sections*/
   
 "use strict";
   
-$navLi.on("click", mobileNavResponse);
+$navLi.on("newActive", mobileNavResponse);
 
 function mobileNavResponse() {
   var $this = $(this);
@@ -18,7 +18,7 @@ function mobileNavResponse() {
   //Make a smooth transition to the newScrollPosition
   $navUl.animate({
     scrollLeft: newScrollPosition
-  }, 500);
+  }, 250);
      
   //set proper css position and width for pos-indicator
   $indicator.css({"left": $thisPositionLeft, "width": $thisWidth});
@@ -27,5 +27,16 @@ function mobileNavResponse() {
   $navLi.removeClass("active");
   $this.addClass("active");
   
-  $("#helper").text("blub");
+  
 }
+
+$navLi.each(function (index) {
+  //click event for each navItem
+  $(this).on("click", function () {
+    //animation for scrolling to different sections
+    $("html, body").animate({
+      //using index to determine target section
+      scrollTop: $sections.eq(index).offset().top - (50)
+    }, 500);
+  });
+});
