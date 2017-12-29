@@ -9,6 +9,7 @@ nav.mobile li {
 
 nav li:hover {
   color: #d1af6c;
+  cursor: pointer;
 }
 
 nav li.active {

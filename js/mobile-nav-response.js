@@ -16,9 +16,9 @@ function mobileNavResponse() {
   var newScrollPosition = $thisPositionLeft + ($thisWidth / 2) - (windowWidth / 2);
 
   //Make a smooth transition to the newScrollPosition
-  $navUl.animate({
+  $navUl.stop(true, false).animate({
     scrollLeft: newScrollPosition
-  }, 250, "linear");
+  }, 500, "linear"); 
      
   //set proper css position and width for pos-indicator
   $indicator.css({"left": $thisPositionLeft, "width": $thisWidth});
