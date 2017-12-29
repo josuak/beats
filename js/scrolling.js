@@ -13,7 +13,7 @@ $(document).on("scroll", function() {
   if (preventScrollEvent === true) {
     setTimeout(function() {
       preventScrollEvent = false;
-    }, 251);
+    }, 350);
     
   } else {
     
