@@ -28,20 +28,22 @@ nav li.active {
 
 nav.mobile ul {
   display: block;
-  padding: 12px 0 0 0;
-  margin: 0;
+  width: 100%;
   position: fixed;
   top: 0;
   left: 0;
+  padding: 12px 0 0 0;
+  margin: 0;
   height: 2em;
   overflow-x: auto;
   overflow-y: hidden;
   white-space: nowrap;
-  width: 100%;
   background-color: #233237;
   color: white;
+  text-align: center;
 }
 
+
 div#page {
-  margin-top: 50px;
+  margin-top: 44px;
 }

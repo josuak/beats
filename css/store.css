@@ -1,0 +1,10 @@
+#store h2 {
+  text-transform: uppercase;
+  display: inline-block
+}
+
+#store iframe {
+  display: flex;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
