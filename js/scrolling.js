@@ -35,7 +35,7 @@ $(document).on("scroll", function() {
       if (!$navLi.eq(2).is(".active")) {
         $navLi.eq(2).trigger("newActive");
       }
-    } else if (scrollTop > ( $("#licenses").offset().top - windowHeight / 2 ) && scrollTop > 50) {
+    } else if (scrollTop > ( $("#licensing").offset().top - windowHeight / 2 ) && scrollTop > 50) {
       if (!$navLi.eq(1).is(".active")) {
         $navLi.eq(1).trigger("newActive");
       }

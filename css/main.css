@@ -1,8 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
 
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: "Roboto Condensed", sans-serif;
-  margin: 0;
 }
 
 .no-select {
@@ -28,6 +32,4 @@ section {
   height: 14px;
   border-top: none;
   border-left: none;
-  transform: rotate(45deg);
-  margin: 0 0 5px 10px;
 }
