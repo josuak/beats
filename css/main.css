@@ -33,3 +33,7 @@ section {
   border-top: none;
   border-left: none;
 }
+
+h2 {
+  text-transform: uppercase;
+}

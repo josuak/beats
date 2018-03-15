@@ -1,0 +1,26 @@
+.dropdown-box {
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.dropdown-box .arrow {
+  float: right;
+  transition: .5s;
+}
+
+.dropdown-box .arrow.up {
+  transform: rotate(-45deg) rotateX(180deg);
+}
+
+.question {
+  padding: 5px;
+  background-color: lightblue;
+  z-index: 2;
+}
+
+.answer {
+  padding: 5px;
+  background-color: lightgreen;
+  z-index: 0;
+  border-bottom-right-radius: 5px;
+}
