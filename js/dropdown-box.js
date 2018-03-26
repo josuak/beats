@@ -1,14 +1,17 @@
 /*global $*/
-$(function() {
-  $(".question").click(function(event) {
+$(function () {
+  "use strict";
+  $(".dropdown-label").click(function (event) {
     var item = $(event.target),
-        arrow = item.children(".arrow");
+        chevron = item.children(".chevron");
     
     item.next().slideToggle();
-    if (!arrow.is(".up")) {
-      arrow.addClass("up");
+    if (!chevron.is(".up")) {
+      chevron.removeClass("down");
+      chevron.addClass("up");
     } else {
-      arrow.removeClass("up");
+      chevron.removeClass("up");
+      chevron.addClass("down");
     }
   });
 });

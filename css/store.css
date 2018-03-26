@@ -9,7 +9,7 @@
   box-sizing: border-box;
 } 
 
-.arrow {
-  transform: rotate(45deg);
-  margin: 0 0 5px 10px;
+.chevron {
+  ;
+  /*margin: 0 0 5px 10px;*/
 }
