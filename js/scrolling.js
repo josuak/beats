@@ -27,7 +27,7 @@ $(document).on("scroll", function() {
       if (!$navLi.eq(4).is(".active")) {
         $navLi.eq(4).trigger("newActive");
       }
-    } else if (scrollTop > ( $("#about").offset().top - windowHeight / 2 )) {
+    } else if (scrollTop > ( $("#mission").offset().top - windowHeight / 2 )) {
       if (!$navLi.eq(3).is(".active")) {
         $navLi.eq(3).trigger("newActive");
       }

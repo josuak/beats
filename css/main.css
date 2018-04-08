@@ -11,10 +11,11 @@ body {
 
 :root {
   --chevron-size: 10px;
-  --chevron-quarter-: calc(var(--chevron-size) / 3.1415 * (-1));
-  --chevron-quarter: calc(var(--chevron-size) / 3.1415);
+  --chevron-translate-: calc(var(--chevron-size) * .3535 * (-1));
+  --chevron-translate: calc(var(--chevron-size) * .3535);
   --gold: #d1af6c;
   --gunmetal: #233237;
+  --cream: #f2f2f2;
 }
 
 .no-select {
@@ -26,6 +27,10 @@ body {
             user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
 }
 
+#page {
+  background-color: var(--cream);
+}
+
 section {
   max-width: 1200px;
   margin: 0 auto;
@@ -35,14 +40,26 @@ section {
 
 .chevron {
   display: inline-block;
-  border: 4px solid black;
+  border: 4px solid #364e56;
   width: var(--chevron-size);
   height: var(--chevron-size);
   border-top: none;
   border-left: none;
-  transform: translate(0, var(--chevron-quarter-)) rotateZ(45deg);
+  transform: translate(0, var(--chevron-translate-)) rotateZ(45deg);
 }
 
-h2 {
+h2, h3 {
   text-transform: uppercase;
+  font-weight: normal;
+  color: black;
+  border-bottom: solid var(--gold);
+  margin: 0 0 15px 0;
+}
+
+a {
+  color: var(--gold)
+}
+
+section {
+  margin-bottom: 15px;
 }

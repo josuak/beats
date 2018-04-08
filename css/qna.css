@@ -1,6 +1,10 @@
 .dropdown-box {
   overflow: hidden;
   margin-bottom: 10px;
+  border-radius: 10px;
+  border: solid 1px;
+  background-color: white;
+  color: #262626;
 }
 
 .dropdown-box .chevron {
@@ -13,53 +17,58 @@
 }
 
 .dropdown-box .chevron.up {
-  transform: translate(0, var(--chevron-quarter)) rotateX(180deg) rotateZ(45deg);
+  transform: translate(0, var(--chevron-translate)) rotateX(180deg) rotateZ(45deg);
   animation: fade-out-in .5s linear;
 }
 
 .dropdown-box .chevron.down {
-  transform: translate(0, var(--chevron-quarter-)) rotateZ(45deg);
+  transform: translate(0, var(--chevron-translate-)) rotateZ(45deg);
   animation: fade-in-out .5s linear;
 }
 
 @keyframes fade-in-out {
   0% {
-    border-color: black;
+    border-color: #364e56;
   }
   
   50% {
-    border-color: white;
+    border-color: #ffdd98;
   }
   
   100% {
-    border-color: black;
+    border-color: #364e56;
   }
 }
 
 @keyframes fade-out-in {
   0% {
-    border-color: black;
+    border-color: #364e56;
   }
   
   50% {
-    border-color: white;
+    border-color: #ffdd98;
   }
   
   100% {
-    border-color: black;
+    border-color: #364e56;
   }
 }
 
 .question {
-  padding: 5px;
-  background-color: lightblue;
+  padding: 7px;
   z-index: 2;
+  
 }
 
 .answer {
-  padding: 5px;
-  background-color: lightgreen;
+  padding: 7px;
+  background-color: #364e56;
+  color: var(--cream);
   z-index: 0;
   border-bottom-right-radius: 5px;
   display: none;
+}
+
+#QnA {
+  margin-top: 10px;
 }

@@ -1,6 +1,5 @@
 #licensing h2 {
-  margin: 0 0 5px 0;
-  border-bottom: solid 2px black;
+  margin-bottom: 10px;
 }
 
 #licenses-container {
@@ -12,22 +11,28 @@
 }
 
 .license-item {
-  flex-basis: 25%;
+  flex-basis: calc(25% - 10px);
   flex-grow: 1;
   min-width: 150px;
   text-align: center;
   display: flex;
   flex-direction: column;
-  background-color: lightgray;
-  padding: 5px;
+  background-color: white;
+  margin: 5px;
   box-sizing: border-box;
-  background-clip: content-box;
+  color: #262626;
 }
 
 .license-item h4 {
+  font-size: 16px;
   padding: 10px;
-  background-color: lightblue;
-  letter-spacing: .2em
+  font-weight: normal;
+  text-transform: uppercase;
+  border: solid 1px var(--gold);  
+ /* border-left: none;
+  border-right: none; **/
+  background-color: #fff0d1;
+  color: var(--gunmetal);
 }
 
 .license-item ul {
@@ -36,10 +41,14 @@
   flex-direction: column;
   height: 100%;
   justify-content: space-evenly;
+  /*border: solid 1px var(--gold);*/
+  border-bottom: none;
+  border-top: none;
 }
 
 .license-item ul li {
   padding: 10px;
+  font-size: 15px;
 }
 
 /* .license-item ul li:nth-child(even) {
@@ -49,5 +58,7 @@
 .license-item .price {
   padding: 10px;
   margin-top: auto;
-  background-color: lightgreen;
+  border: solid 1px var(--gold);
+  border-left: none;
+  border-right: none;
 }
