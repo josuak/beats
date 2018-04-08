@@ -9,7 +9,6 @@
   box-sizing: border-box;
 } 
 
-.chevron {
-  ;
-  /*margin: 0 0 5px 10px;*/
+#store .chevron {
+  margin: 0 0 0 10px;
 }

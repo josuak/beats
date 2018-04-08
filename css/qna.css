@@ -28,41 +28,40 @@
 
 @keyframes fade-in-out {
   0% {
-    border-color: #364e56;
+    border-color: var(--lightmetal);
   }
   
   50% {
-    border-color: #ffdd98;
+    border-color: var(--lightgold);
   }
   
   100% {
-    border-color: #364e56;
+    border-color: var(--lightmetal);
   }
 }
 
 @keyframes fade-out-in {
   0% {
-    border-color: #364e56;
+    border-color: var(--lightmetal);
   }
   
   50% {
-    border-color: #ffdd98;
+    border-color: var(--lightgold);
   }
   
   100% {
-    border-color: #364e56;
+    border-color: var(--lightmetal);
   }
 }
 
 .question {
   padding: 7px;
   z-index: 2;
-  
 }
 
 .answer {
   padding: 7px;
-  background-color: #364e56;
+  background: linear-gradient(to top left, var(--lightmetal), var(--gunmetal));
   color: var(--cream);
   z-index: 0;
   border-bottom-right-radius: 5px;
@@ -70,5 +69,5 @@
 }
 
 #QnA {
-  margin-top: 10px;
+  padding-top: 10px;
 }
