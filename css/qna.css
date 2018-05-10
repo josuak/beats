@@ -18,12 +18,12 @@
 
 .dropdown-box .chevron.up {
   transform: translate(0, var(--chevron-translate)) rotateX(180deg) rotateZ(45deg);
-  animation: fade-out-in .5s linear;
+  animation: fade-in-out .5s linear;
 }
 
 .dropdown-box .chevron.down {
   transform: translate(0, var(--chevron-translate-)) rotateZ(45deg);
-  animation: fade-in-out .5s linear;
+  animation: fade-out-in .5s linear;
 }
 
 @keyframes fade-in-out {

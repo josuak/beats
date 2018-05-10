@@ -43,6 +43,9 @@ nav.mobile ul {
   text-align: center;
 }
 
+nav ul::-webkit-scrollbar {
+	display: none;
+}
 
 div#page {
   margin-top: 44px;
