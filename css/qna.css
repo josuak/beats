@@ -65,7 +65,7 @@
   color: var(--cream);
   z-index: 0;
   border-bottom-right-radius: 5px;
-  display: none;
+ 	display: none; 
 }
 
 #QnA {

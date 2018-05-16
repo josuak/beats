@@ -4,7 +4,7 @@ nav.mobile li {
   font-size: 18px;
   padding: 15px;
   overflow: auto;
-  transition: .25s;
+  transition: .0;
 }
 
 nav li:hover {
