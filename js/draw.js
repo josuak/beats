@@ -99,6 +99,7 @@ for (let i = 0; i < lines.length; i++) {
 // lines animation
 function lineAnimation() {
   for (let i = 0; i < lines.length; i++) {
+    lines[i].stop(true);
     // reset dashoffset
     lines[i].style('animation: reset-dash 0 forwards');
     // reset opacity
