@@ -129,7 +129,7 @@ function initAnimation() {
       group.opacity(1);
       group.animate(500, '>', i * 200).scale(1.1, 1.1);
       group.animate(500, '-').scale(1, 1);
-      lines[i].opacity(1);
+      setTimeout(() => lines[i].opacity(1), 1300);
     }
     // intial lineAnimation
     setTimeout(lineAnimation, 1300);
