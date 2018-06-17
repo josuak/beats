@@ -1,4 +1,4 @@
-/* global SVG, setInterval, setTimeout $ */
+/* global SVG, setInterval, setTimeout */
 /* eslint switch-colon-spacing: "off", new-cap: "off", require-jsdoc: "off" */
 
 const s = SVG('canvas').size(200, 200);
@@ -31,12 +31,13 @@ class iconObject {
 
     this.group.attr({
       'cursor': 'pointer',
+      'opacity': 0,
     });
   }
 
   // scale the icons group (containing circle and image) with animation
-  scale(factor) {
-    this.group.animate(500, '<>').scale(factor, factor);
+  scale(factor, duration) {
+    this.group.animate(duration, '<>').scale(factor, factor);
   }
 
   // use svgjs linkTo() directly on iconObject
@@ -47,16 +48,16 @@ class iconObject {
 }
 
 // create iconObjects for all the different icons
-let instagram = new iconObject('../img/instagram.svg', 100, 40);
+let instagram = new iconObject('img/instagram.svg', 100, 40);
   instagram.linkTo('http://instagram.com/jozugoingcrazy');
 
-let twitter = new iconObject('../img/twitter.svg', 40, 100, 'Twitter');
+let twitter = new iconObject('img/twitter.svg', 40, 100, 'Twitter');
   twitter.linkTo('http://twitter.com/prodbyjozu');
 
-let soundcloud = new iconObject('../img/soundcloud.svg', 100, 160);
+let soundcloud = new iconObject('img/soundcloud.svg', 100, 160);
   soundcloud.linkTo('http://soundcloud.com/prodbyjozu');
 
-let youtube = new iconObject('../img/youtube.svg', 160, 100);
+let youtube = new iconObject('img/youtube.svg', 160, 100);
   youtube.linkTo('http://youtubed.com/prodbyjozu');
 
 let iconObjects = [instagram, twitter, soundcloud, youtube];
@@ -86,25 +87,11 @@ for (let line of lines) {
   // fill lines
   line.stroke({width: 2, color: '#31444a'});
   // give lines class of 'line'
-  line.attr('class', 'line');
+  line.attr({
+    'class': 'line',
+    'opacity': 0,
+  });
 }
-
-// jQuery animation
-/* let $lines = [$('line').eq(0),
-           $('line').eq(1),
-           $('line').eq(2),
-           $('line').eq(3)];
-
-function $lineAnimation() {
-  for (let i = 0; i < $lines.length; i++) {
-    $lines[i].css('animation', 'reset-dash 0 forwards');
-    $lines[i].css('opactiy', '1');
-    setTimeout(function() {
-      $lines[i].css('animation', 'dash 1s forwards');
-    }, 500 * i);
-    $lines[i].delay(3000).animate({opacity: 0}, 500);
-  }
-} */
 
 // lines animation
 function lineAnimation() {
@@ -120,5 +107,24 @@ function lineAnimation() {
     lines[i].animate(500, '>', 3000).attr('opacity', '0');
   }
 }
-lineAnimation();
-setInterval(lineAnimation, 4000);
+
+let initAnimationOnce = true;
+function initAnimation() {
+  // check if function already ran (null = falsy)
+  if (initAnimationOnce) {
+    for (let i = 0; i < iconObjects.length; i++) {
+      let group = iconObjects[i].group;
+      group.scale(.01, .01);
+      group.opacity(1);
+      group.animate(500, '>', i * 200).scale(1.1, 1.1);
+      group.animate(500, '-').scale(1, 1);
+    }
+    // intial lineAnimation
+    setTimeout(lineAnimation, 1300);
+    // execute lineAnimation every 4000ms
+    setTimeout(() => setInterval(lineAnimation, 4000), 1300);
+  }
+  // only let function run once
+  initAnimationOnce = null;
+}
+

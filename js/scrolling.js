@@ -31,6 +31,7 @@ $(function () {
 		} else if (scrollTop > ($('#social').offset().top - windowHeight / 2)) {
 			if (!$navLi.eq(4).is('.active')) {
 				$navLi.eq(4).trigger('newActive');
+                initAnimation();
 			}
 
 		} else if (scrollTop > ($('#mission').offset().top - windowHeight / 2)) {
