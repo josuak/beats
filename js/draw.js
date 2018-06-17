@@ -97,18 +97,23 @@ for (let i = 0; i < lines.length; i++) {
 }
 
 // lines animation
-function lineAnimation() {
+function lineAnimation(once) {
   for (let i = 0; i < lines.length; i++) {
-    lines[i].stop(true);
-    // reset dashoffset
-    lines[i].style('animation: reset-dash 0 forwards');
-    // reset opacity
-    lines[i].attr('opacity', '1');
     // actual animation
     setTimeout(() => {
       lines[3-i].style('animation: dash 1s forwards');
     }, 500 * i);
-    lines[i].animate(500, '>', 3000).attr('opacity', '0');
+    lines[i].animate(500, '>', 3000).opacity(0);
+
+    // reset animation when it finished (after ~ 3500ms)
+    setTimeout(() => {
+      // reset dashoffset
+      lines[i].style('animation: reset-dash 0 forwards');
+      // reset opacity
+      lines[i].opacity(1);
+      // clear animation queue
+      lines[i].stop();
+    }, 3500);
   }
 }
 
@@ -118,19 +123,21 @@ let initAnimationOnce = true;
 function initAnimation() {
   // check if function already ran (null = falsy)
   if (initAnimationOnce) {
-    for (let i = 0; i < iconObjects.length; i++) {
+    for (let i = 0; i < 4; i++) {
       let group = iconObjects[i].group;
       group.scale(.01, .01);
       group.opacity(1);
       group.animate(500, '>', i * 200).scale(1.1, 1.1);
       group.animate(500, '-').scale(1, 1);
+      lines[i].opacity(1);
     }
     // intial lineAnimation
     setTimeout(lineAnimation, 1300);
     // execute lineAnimation every 4000ms
     setTimeout(() => setInterval(lineAnimation, 4000), 1300);
+
+    // only let function run once
+    initAnimationOnce = null;
   }
-  // only let function run once
-  initAnimationOnce = null;
 }
 
