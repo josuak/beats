@@ -5,12 +5,13 @@ const s = SVG('canvas').size(200, 200);
 
 // template to create an "iconObject" containing svg-circle and svg-icon-image
 class iconObject {
-  constructor(iconUrl, cx, cy) {
+  constructor(iconUrl, cx, cy, groupId) {
     this.circle = s.circle(50);
     this.icon = s.image(iconUrl, 30, 30);
     this.group = s.group();
     this.cx = cx;
     this.cy = cy;
+    this.groupId = groupId;
   }
 
   // align circle and icon above each other
@@ -32,6 +33,7 @@ class iconObject {
     this.group.attr({
       'cursor': 'pointer',
       'opacity': 0,
+      'id': this.groupId,
     });
   }
 
@@ -48,16 +50,16 @@ class iconObject {
 }
 
 // create iconObjects for all the different icons
-let instagram = new iconObject('img/instagram.svg', 100, 40);
+let instagram = new iconObject('img/instagram.svg', 100, 40, 'icon-ig');
   instagram.linkTo('http://instagram.com/jozugoingcrazy');
 
-let twitter = new iconObject('img/twitter.svg', 40, 100, 'Twitter');
+let twitter = new iconObject('img/twitter.svg', 40, 100, 'icon-t');
   twitter.linkTo('http://twitter.com/prodbyjozu');
 
-let soundcloud = new iconObject('img/soundcloud.svg', 100, 160);
+let soundcloud = new iconObject('img/soundcloud.svg', 100, 160, 'icon-scl');
   soundcloud.linkTo('http://soundcloud.com/prodbyjozu');
 
-let youtube = new iconObject('img/youtube.svg', 160, 100);
+let youtube = new iconObject('img/youtube.svg', 160, 100, 'icon-yt');
   youtube.linkTo('http://youtubed.com/prodbyjozu');
 
 let iconObjects = [instagram, twitter, soundcloud, youtube];
@@ -80,16 +82,17 @@ let line3 = line(soundcloud, youtube);
 let line4 = line(youtube, instagram);
 const lines = [line1, line2, line3, line4];
 
-for (let line of lines) {
+for (let i = 0; i < lines.length; i++) {
   /* move lines to the back of the canvas /
   position them before the other items in the html code */
-  line.back();
+  lines[i].back();
   // fill lines
-  line.stroke({width: 2, color: '#31444a'});
+  lines[i].stroke({width: 2, color: '#31444a'});
   // give lines class of 'line'
-  line.attr({
+  lines[i].attr({
     'class': 'line',
     'opacity': 0,
+    'id': 'line' + i,
   });
 }
 
@@ -109,6 +112,8 @@ function lineAnimation() {
 }
 
 let initAnimationOnce = true;
+
+// function initAnimation is used in scrolling.js
 function initAnimation() {
   // check if function already ran (null = falsy)
   if (initAnimationOnce) {
