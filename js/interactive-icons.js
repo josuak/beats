@@ -61,7 +61,7 @@ $(function() {
     soundcloud.linkTo('http://soundcloud.com/prodbyjozu');
 
   let youtube = new iconObject('img/youtube.svg', 160, 100, 'icon-yt');
-    youtube.linkTo('http://youtubed.com/prodbyjozu');
+    youtube.linkTo('http://youtube.com/prodbyjozu');
 
   let iconObjects = [instagram, twitter, soundcloud, youtube];
 
