@@ -1,4 +1,4 @@
-/* global $ initAnimation */
+/* global $ */
 /* eslint require-jsdoc: 'off', no-invalid-this: 'off' */
 /* eslint-env browser */
 $(function() {
@@ -92,13 +92,6 @@ $(function() {
         scrollTop: $sections.eq(index).offset().top - (50),
       }, 500);
       $(this).trigger('newActive');
-
-      // if the social section gets selected run initAnimation
-      setTimeout(() => {
-        if (index === 4) {
-          initAnimation();
-        }
-      }, 500);
     });
   });
 
