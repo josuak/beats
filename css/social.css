@@ -46,14 +46,12 @@
   stroke-dashoffset: -60;
 }
 
+.animating {
+  animation: dash 1s forwards;
+}
+
 @keyframes dash {
   to {
     stroke-dashoffset: 0; 
-  }
-}
-
-@keyframes reset-dash {
-  to {
-    stroke-dashoffset: -60;
   }
 }
