@@ -41,10 +41,10 @@
   left: -200px;
 }
 
-.line {
+/* .line {
   stroke-dasharray: 60;
   stroke-dashoffset: -60;
-}
+} */
 
 .animating {
   animation: dash 1s forwards;

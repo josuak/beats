@@ -73,14 +73,14 @@ $(function() {
 
   // function that creates a svg line between two iconObjects
   // (with the svgjs line() function)
-  function line(iconOne, iconTwo) {
-    return s.line(iconOne.cx, iconOne.cy, iconTwo.cx, iconTwo.cy);
+  function line(icon) {
+    return s.line(icon.cx, icon.cy, icon.cx, icon.cy);
   }
 
-  let line1 = line(instagram, twitter);
-  let line2 = line(twitter, soundcloud);
-  let line3 = line(soundcloud, youtube);
-  let line4 = line(youtube, instagram);
+  let line1 = line(instagram);
+  let line2 = line(twitter);
+  let line3 = line(soundcloud);
+  let line4 = line(youtube);
   const lines = [line1, line2, line3, line4];
 
   for (let i = 0; i < lines.length; i++) {
@@ -101,15 +101,23 @@ $(function() {
   let animationTimers = [];
   // lines animation
   function lineAnimation() {
-    for (let i = 0; i < lines.length; i++) {
-      // clear all lined up intervals so there're no overlapping animations
-      clearInterval(animationTimers[i]);
-      lines[i].removeClass('animating');
-      lines[i].style('stroke-dashoffset: -60;');
+    for (let i = 0; i < 4; i++) {
       lines[i].attr('opacity', 1);
       // each line should start animating 500ms offset from the prior
       animationTimers[i] = setInterval(() => {
-        lines[3-i].addClass('animating');
+        if (i === 0) {
+          lines[i].animate(800, '-')
+                  .plot(iconObjects[i].cx,
+                        iconObjects[i].cy,
+                        iconObjects[i+3].cx,
+                        iconObjects[i+3].cy);
+        } else {
+          lines[4-i].animate(800, '-')
+                    .plot(iconObjects[4-i].cx,
+                          iconObjects[4-i].cy,
+                          iconObjects[3-i].cx,
+                          iconObjects[3-i].cy);
+        }
       }, 500 * i + 100);
       // this here  |  is the + 100 from below in initAnimation
     }
@@ -125,7 +133,6 @@ $(function() {
     if (initAnimationOnce) {
       for (let i = 0; i < 4; i++) {
         let group = iconObjects[i].group;
-        lines[i].attr('opacity', 0);
         group.scale(.01, .01);
         group.opacity(1);
         group.animate(500, '>', i * 200).scale(1.1, 1.1);
@@ -157,8 +164,17 @@ $(function() {
         inView = false;
         // svg is out of view, make invisible for next animation to start fresh.
         for (let i = 0; i < 4; i++) {
-          lines[i].attr('opacity', 0);
-          iconObjects[i].group.attr('opacity', 0);
+          // resetting all the values for the next animation
+          let currentIcon = iconObjects[i];
+          // clear all lined up intervals so there're no overlapping animations
+          clearInterval(animationTimers[i]);
+          lines[i].stop(true, true)
+                  .attr('opacity', 0)
+                  .plot(currentIcon.cx,
+                        currentIcon.cy,
+                        currentIcon.cx,
+                        currentIcon.cy);
+          currentIcon.group.attr('opacity', 0);
         }
       }
     }
