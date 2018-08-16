@@ -170,13 +170,18 @@
             <svg id="canvas"></svg>
           </div>
           
+          
           <div id="testimonials-container">
-            <div class="slide" id="slide-3">
-            </div>
-            <div class="slide" id="slide-2">
-            </div>
-            <div class="slide" id="slide-1">
-            </div>
+            
+            <div id='prev-btn' class="chevron"></div>
+            <div id='next-btn' class="chevron"></div>
+            
+            <div id="slide-0" class="slide prev-prev"></div>
+            <div id="slide-1" class="slide prev"></div>
+            <div id="slide-2" class="slide active"></div>
+            <div id="slide-3" class="slide next"></div>
+            <div id="slide-4" class="slide next-next"></div>
+            
           </div>
           
         </div>
@@ -217,12 +222,31 @@
         
       </footer>
       <script src="js/jquery-3.3.1.min.js"></script>
-      <script src="js/velocity.min.js"></script>
+      <script>
+        window.twttr = (function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0],
+            t = window.twttr || {};
+          if (d.getElementById(id)) return t;
+          js = d.createElement(s);
+          js.id = id;
+          js.src = "https://platform.twitter.com/widgets.js";
+          fjs.parentNode.insertBefore(js, fjs);
+
+          t._e = [];
+          t.ready = function(f) {
+            t._e.push(f);
+          };
+
+          return t;
+        }(document, "script", "twitter-wjs"));
+      </script>
+      <!-- <script src="js/velocity.min.js"></script> -->
       <script src="js/scrolling.js"></script>
       <script src="js/dropdown-box.js" ></script>
       <script src="js/get-url-var.js"></script>
       <script src="js/svg.js"></script>
       <script src="js/interactive-icons.js"></script>
+      <script src="js/slider.js"></script>
     </div>
   </body>
 </html>

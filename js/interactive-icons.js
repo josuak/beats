@@ -83,7 +83,7 @@ $(function() {
   let line4 = line(youtube);
   const lines = [line1, line2, line3, line4];
 
-  for (let i = 0; i < lines.length; i++) {
+  for (let i = 0; i < 4; i++) {
     /* move lines to the back of the canvas /
     position them before the other items in the html code */
     lines[i].back();
