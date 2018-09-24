@@ -2,14 +2,7 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="css/main.css" type="text/css" rel="stylesheet" />
-    <link href="css/nav.css" type="text/css" rel="stylesheet" />
-    <link href="css/header.css" type="text/css" rel="stylesheet" />
-    <link href="css/store.css" type="text/css" rel="stylesheet" />
-    <link href="css/licensing.css" type="text/css" rel="stylesheet" />
-    <link href="css/qna.css" type="text/css" rel="stylesheet" />
-    <link href="css/mission.css" type="text/css" rel="stylesheet" /> 
-    <link href="css/social.css" type="text/css" rel="stylesheet" />
+    <link href="build/all.min.css" type="text/css" rel="stylesheet" />
   </head>
   <body>
     
@@ -170,19 +163,22 @@
             <svg id="canvas"></svg>
           </div>
           
-          
-          <div id="testimonials-container">
-            
-            <div id='prev-btn' class="chevron"></div>
-            <div id='next-btn' class="chevron"></div>
-            
-            <div id="slide-0" class="slide prev-prev"></div>
-            <div id="slide-1" class="slide prev"></div>
-            <div id="slide-2" class="slide active"></div>
-            <div id="slide-3" class="slide next"></div>
-            <div id="slide-4" class="slide next-next"></div>
-            
+          <div class="testimonials-outer-container">
+            <h5>Other artist working with prodbyjozu:</h5>
+            <div id="testimonials-container">
+
+              <span id='prev-btn' class="chevron slider-btn"></span>
+              <span id='next-btn' class="chevron slider-btn"></span>
+
+              <div id="slide-0" class="slide prev-prev"></div>
+              <div id="slide-1" class="slide prev"></div>
+              <div id="slide-2" class="slide active"></div>
+              <div id="slide-3" class="slide next"></div>
+              <div id="slide-4" class="slide next-next"></div>
+
+            </div>
           </div>
+          
           
         </div>
       </section>
@@ -222,6 +218,7 @@
         
       </footer>
       <script src="js/jquery-3.3.1.min.js"></script>
+      <script src="js/svg.js"></script>
       <script>
         window.twttr = (function(d, s, id) {
           var js, fjs = d.getElementsByTagName(s)[0],
@@ -241,12 +238,7 @@
         }(document, "script", "twitter-wjs"));
       </script>
       <!-- <script src="js/velocity.min.js"></script> -->
-      <script src="js/scrolling.js"></script>
-      <script src="js/dropdown-box.js" ></script>
-      <script src="js/get-url-var.js"></script>
-      <script src="js/svg.js"></script>
-      <script src="js/interactive-icons.js"></script>
-      <script src="js/slider.js"></script>
+      <script src="build/all.min.js"></script>
     </div>
   </body>
 </html>
