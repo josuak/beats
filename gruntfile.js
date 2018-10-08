@@ -13,9 +13,9 @@ module.exports = function(grunt) {
       t1: {
         files: {
           'build/all.min.js' : ['js/scrolling.js',
-                                'js/slider.js',
-                                'js/interactive-icons.js',
                                 'js/dropdown-box.js',
+                                'js/interactive-icons.js',
+                                'js/slider.js',
                                 'js/get-url-var.js',]
         }
       }
