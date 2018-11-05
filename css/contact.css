@@ -6,32 +6,24 @@
   margin: 0 -10px;
 }
 
-.text-input-container, .textarea-container {
+#contact .text-input-container,
+#contact .textarea-container,
+#contact #validation {
   flex-grow: 1;
   box-sizing: border-box;
   margin: 5px 10px;
 }
 
-.text-input-container {
+#contact .text-input-container {
   min-width: 200px;
 }
 
-.textarea-container {
+#contact .textarea-container {
   flex-basis: 100%;
 }
 
-#contact textarea {
-  height: 150px;
-  resize: vertical;
-}
-
-#contact form label {
-  display: block;
-  margin-bottom: 5px;
-  text-transform: uppercase;
-}
-
 #contact .user-input {
+  display: block;
   padding: 5px;
   width: 100%;
   box-sizing: border-box;
@@ -43,9 +35,22 @@
   transition: background .5s, border .5s;
 }
 
-#contact .user-input:focus, #contact .user-input:hover {
+#contact .user-input:focus,
+#contact .user-input:hover {
   background-color: white;
   border: solid 1px var(--gold);
+  border-radius: 5px;
+}
+
+#contact textarea {
+  height: 150px;
+  resize: vertical;
+}
+
+#contact form label {
+  display: block;
+  margin-bottom: 5px;
+  text-transform: uppercase;
 }
 
 #contact .submit-container {
@@ -70,4 +75,21 @@
 #contact input[name="submit"]:hover {
   color: var(--gunmetal);
   background-color: white;
+}
+
+#contact #validation {
+  text-align: center;
+}
+
+#contact .input-error {
+  border: solid 1px var(--red);
+  border-radius: 5px;
+}
+
+#contact #validation .error-message {
+  color: var(--red);
+}
+
+#contact #validation .success-message {
+  font-style: italic;
 }

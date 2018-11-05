@@ -192,26 +192,34 @@
         <form method="post" action="">
           
           <div class="text-input-container">
+            <label for="user-name">Your artist name:</label>
+            <input class="user-input" type="text" name="user-name" id="user-name" placeholder="e.g. prodbyjozu.."/>
+<!--            <div class="form-warning">Please enter your artist name.</div>          -->
+          </div>
+          
+          <div class="text-input-container">
             <label for="user-email">Your Email:</label>
-            <input class="user-input" type="email" name="user-email" id="user-email" placeholder="you@example.com"/>
-            <div class="form-warning">Please enter your email adress.</div>          
+            <input class="user-input" type="text" name="user-email" id="user-email" placeholder="you@example.com"/>
+<!--            <div class="form-warning invisible">Please enter a valid email adress.</div>           -->
           </div>
           
           <div class="text-input-container">
             <label for="email-subject">Subject:</label>
             <input class="user-input" type="text" name="subject" id="subject" placeholder="e.g. Exclusive Rights, Licensing Question.."/>
-            <div class="form-warning">Please enter a subject.</div>          
+<!--            <div class="form-warning invisible">Please enter a subject.</div> -->         
           </div>
           
           <div class="textarea-container">
             <label for="email-message">Message:</label>
             <textarea class="user-input" name="message" id="message" placeholder="Your message here.."></textarea>
-            <div class="form-warning">Please enter a message.</div>
+<!--            <div class="form-warning invisible">Please enter a message.</div>-->
           </div>
           
           <div class="submit-container">
-            <input type="submit" value="Send" name="submit"/>
+            <input type="submit" value="Send" name="submit" id="submit"/>
           </div>
+          
+          <div id="validation"></div>
           
         </form>
       </section>
@@ -230,7 +238,7 @@
         </ul>
         
       </footer>
-      <script src="js/jquery-3.3.1.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
       <script src="js/svg.min.js"></script>
       <script>
         window.twttr = (function(d, s, id) {
@@ -252,6 +260,7 @@
       </script>
       <!-- <script src="js/velocity.min.js"></script> -->
       <script src="build/all.min.js"></script>
+      <script src="js/contact.js"></script>
     </div>
   </body>
 </html>
