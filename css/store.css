@@ -1,6 +1,6 @@
 #store h2 {
-  display: inline-block;
-  margin: 15px 0
+  /*display: inline-block;*/
+  margin: 0 0 15px 0;
 }
 
 #store iframe {
@@ -11,4 +11,8 @@
 
 #store .chevron {
   margin: 0 0 0 10px;
+}
+
+#store {
+  padding-top: 15px;
 }

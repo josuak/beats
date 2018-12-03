@@ -14,6 +14,7 @@
   position: relative;
   top: 2px;
   right: 2px;
+  cursor: pointer;
 }
 
 .dropdown-box .chevron.up {
@@ -57,6 +58,7 @@
 .question {
   padding: 7px;
   z-index: 2;
+  cursor: pointer;
 }
 
 .answer {

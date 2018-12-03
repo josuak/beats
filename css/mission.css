@@ -1,7 +1,11 @@
 #mission-container {
-  padding: 20px;
-  padding-top: 10px;
-  text-align: center;
+  padding: 1em;
+  padding-top: 0;
+  text-align: left;
   font-size: 18px;
-  font-style: italic;
+  font-style: normal;
+}
+
+#mission-container p {
+  margin: 1em 0;
 }
