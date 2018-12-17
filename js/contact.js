@@ -1,11 +1,12 @@
 /* global $ */
 /* eslint require-jsdoc: 'off', no-invalid-this: 'off' */
 /* eslint-env browser */
-$(function() {
-  $('#contact form').on('submit', function(event) {
-    // prevent form action upon submitting the form
-    event.preventDefault();
 
+let preventSubmit = false;
+$('#contact form').on('submit', function(event) {
+  // prevent form action upon submitting the form
+  event.preventDefault();
+  if (preventSubmit === false) {
     // get values from form inputs to post in contact php
     let userName = $('#user-name').val();
     let userEmail = $('#user-email').val();
@@ -21,9 +22,16 @@ $(function() {
       'message': message,
       'submit': submit,
     });
-  });
+    preventSubmit = true;
+    setTimeout(function() {
+      preventSubmit = false;
+    }, 3000);
+  } else {
+    $('#validation').html(
+      '<span class="error-message">don\'t spam bruh</p>');
+  }
+});
 
-  $('.user-input').on('change', function() {
-    $(this).removeClass('input-error');
-  });
+$('.user-input').on('change', function() {
+  $(this).removeClass('input-error');
 });

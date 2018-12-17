@@ -80,11 +80,12 @@ function scrolling() {
   }
 }
 
+const $sections = $('section');
+
 $navLi.each(function(index) {
   // click event for each navItem
   $(this).on('click', function() {
     pause(550, false);
-    const $sections = $('section');
     // animation for scrolling to different sections
     $('html, body').stop(true, false).animate({
       // using index to determine target section
@@ -92,6 +93,32 @@ $navLi.each(function(index) {
     }, 500);
     $(this).trigger('newActive');
   });
+});
+
+/* slightly altered function from the one above, to allow for the same
+   scrolling exprience when clicking on a '.inside-link'. */
+function clickScroll(index) {
+  pause(550, false);
+  // animation for scrolling to different sections
+  $('html, body').stop(true, false).animate({
+    // using index to determine target section
+    scrollTop: $sections.eq(index).offset().top - (50),
+  }, 500);
+  $navLi.eq(index).trigger('newActive');
+}
+
+/* This is made for links pointing to sections on the page the user is on. */
+$('.inside-link').on('click', function(event) {
+  // prevent the default action of going straight to the sect. thru the href
+  event.preventDefault();
+  // Determine where we need to scroll to
+  if ($(this).attr('href') == '#social') {
+    // Plug the scroll destination / nav index in the clickScroll function
+    clickScroll(4);
+  }
+  if ($(this).attr('href') == '#contact') {
+    clickScroll(5);
+  }
 });
 
 function mobileNavResponse() {

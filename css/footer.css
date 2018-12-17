@@ -1,4 +1,22 @@
 footer {
   background-color: var(--gunmetal);
   color: var(--cream);
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#copyright {
+  
+}
+
+#legal {
+  list-style: none;
+  font-size: 14px;
+}
+
+#legal li {
+  float: right;
+  margin-left: 10px;
 }
