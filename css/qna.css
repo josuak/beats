@@ -8,12 +8,8 @@
 }
 
 .dropdown-box .chevron {
-  float: right;
   transition: all .5s;
   transform-origin: center;
-  position: relative;
-  top: 2px;
-  right: 2px;
   cursor: pointer;
 }
 
@@ -56,9 +52,21 @@
 }
 
 .question {
-  padding: 7px;
+  padding: 7px calc(7px * 1.3535) 7px 7px;
   z-index: 2;
   cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.question-text {
+  padding-right: 10px;
+}
+
+#QnA .chevron-container {
+  display: flex;
+  align-items: flex-end;
 }
 
 .answer {

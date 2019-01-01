@@ -1,10 +1,17 @@
 footer {
   background-color: var(--gunmetal);
   color: var(--cream);
-  padding: 10px;
+}
+
+#footer-inner-container {
+  max-width: 1200px;
+  min-width: 310px;
+  padding: 15px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
 #copyright {

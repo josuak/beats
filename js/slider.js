@@ -6,7 +6,7 @@ twttr.ready(() => {
   let tweets = ['948292603178610688',
                 '882307169810599937',
                 '1070064374105034752',
-                '1028742674411659268',
+                '1079593651754487813',
                 '1028369467569528834'];
 
   // create tweets for each id
@@ -18,6 +18,7 @@ twttr.ready(() => {
       {
         linkColor: '#d1af6c',
         cards: 'hidden',
+        conversation: 'none',
       }
     );
   }
@@ -28,7 +29,7 @@ let slidingTimer;
 // variable to determine wehther a transition is currently in running
 let sliding = false;
 
-const prevBtn = $('#prev-btn');
+const prevBtn = $('#prev-btn-container');
 prevBtn.click(() => {
   if (sliding === false) {
     clearInterval(slidingTimer);
@@ -41,7 +42,7 @@ prevBtn.click(() => {
   }
 });
 
-const nextBtn = $('#next-btn');
+const nextBtn = $('#next-btn-container');
 nextBtn.click(() => {
   if (sliding === false) {
     clearInterval(slidingTimer);

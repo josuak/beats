@@ -17,6 +17,7 @@ body {
   --gold: #d1af6c;
   --gunmetal: #233237;
   --cream: #f2f2f2;
+  --dark: #1a1a1a;
   --red: #ce443f;
   --lightgold: #e4c079;
   --lightmetal: #31444a;
@@ -37,10 +38,10 @@ body {
 }
 
 #page {
-  background: #1a1a1a;
+  background: var(--cream);
 }
 
-section, footer {
+section {
   max-width: 1200px;
   min-width: 310px;
   margin: 0 auto;

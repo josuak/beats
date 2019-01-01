@@ -27,20 +27,28 @@
   border-radius: 10px;
 } 
 
-.slider-btn {
+#social .chevron-container {
   position: absolute;
-  top: 111px; 
   z-index: 25;
   cursor: pointer;
+  padding: 10px;
+}
+
+#prev-btn-container {
+  left: 5px;
+  top: 101px;
+}
+
+#next-btn-container {
+  right: 5px;
+  top: 101px;
 }
 
 #prev-btn {
-  left: 15px;
   transform: translate(0, var(--chevron-translate)) rotateZ(135deg);
 }
 
 #next-btn {
-  right: 15px;
   transform: translate(0, var(--chevron-translate)) rotateZ(-45deg); 
 }
 
