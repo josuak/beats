@@ -2,6 +2,9 @@
 /* global SVG $ */
 /* eslint switch-colon-spacing: "off", new-cap: "off", require-jsdoc: "off" */
 const s = SVG('canvas').size(200, 200);
+const styles = window.getComputedStyle(document.documentElement);
+const circleBg = styles.getPropertyValue('--accent-text-n-bg-color');
+const outlineColor = styles.getPropertyValue('--lightgold');
 
 // template to create an "iconObject" containing svg-circle and svg-icon-image
 class iconObject {
@@ -25,8 +28,8 @@ class iconObject {
   // add styling to circle
   style() {
     this.circle.attr({
-      'fill': 'white',
-      'stroke': '#e4c079',
+      'fill': circleBg,
+      'stroke': outlineColor,
       'stroke-width': 2,
     });
 
@@ -81,13 +84,14 @@ let line2 = line(twitter);
 let line3 = line(soundcloud);
 let line4 = line(youtube);
 const lines = [line1, line2, line3, line4];
+const lineColor = styles.getPropertyValue('--lightmetal');
 
 for (let i = 0; i < 4; i++) {
   /* move lines to the back of the canvas /
   position them before the other items in the html code */
   lines[i].back();
   // fill lines
-  lines[i].stroke({width: 2, color: '#31444a'});
+  lines[i].stroke({width: 2, color: lineColor});
   // give lines class of 'line'
   lines[i].attr({
     'class': 'line',

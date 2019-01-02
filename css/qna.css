@@ -3,8 +3,8 @@
   margin-bottom: 10px;
   border-radius: 10px;
   border: solid 1px;
-  background-color: white;
-  color: #262626;
+  background-color: var(--accent-text-n-bg-color);
+  color: var(--backdrop-n-2nd-text-color);
 }
 
 .dropdown-box .chevron {
@@ -72,7 +72,7 @@
 .answer {
   padding: 7px;
   background: linear-gradient(to top left, var(--lightmetal), var(--gunmetal));
-  color: var(--cream);
+  color: var(--main-content-bg);
   z-index: 0;
   border-bottom-right-radius: 5px;
  	display: none; 

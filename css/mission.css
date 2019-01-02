@@ -4,6 +4,7 @@
   text-align: left;
   font-size: 18px;
   font-style: normal;
+  color: var(--main-text-color)
 }
 
 #mission-container p {

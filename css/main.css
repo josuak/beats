@@ -15,12 +15,14 @@ body {
   --chevron-translate-: calc(var(--chevron-size) * .3535 * (-1));
   --chevron-translate: calc(var(--chevron-size) * .3535);
   --gold: #d1af6c;
-  --gunmetal: #233237;
-  --cream: #f2f2f2;
-  --dark: #1a1a1a;
-  --red: #ce443f;
   --lightgold: #e4c079;
+  --gunmetal: #233237;
   --lightmetal: #31444a;
+  --red: #ce443f;
+  --main-text-color: #000000;
+  --backdrop-n-2nd-text-color: #1a1a1a;
+  --accent-text-n-bg-color: #ffffff;
+  --main-content-bg: #f2f2f2;
 }
 
 .no-select {
@@ -38,21 +40,21 @@ body {
 }
 
 #page {
-  background: var(--cream);
+  background: var(--backdrop-n-2nd-text-color);
 }
 
 section {
   max-width: 1200px;
   min-width: 310px;
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 0 15px 15px 15px;
   box-sizing: border-box;
-  background-color: var(--cream);
+  background-color: var(--main-content-bg);
 }
 
 .chevron {
   display: inline-block;
-  border: 4px solid #364e56;
+  border: 4px solid var(--lightmetal);
   width: var(--chevron-size);
   height: var(--chevron-size);
   border-top: none;
@@ -63,15 +65,11 @@ section {
 h2, h3 {
   text-transform: uppercase;
   font-weight: normal;
-  color: black;
+  color: var(--main-text-color);
   border-bottom: solid var(--gold);
   margin: 0 0 15px 0;
 }
 
 a {
   color: var(--gold);
-}
-
-section {
-  padding-bottom: 15px;
 }

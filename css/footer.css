@@ -1,6 +1,6 @@
 footer {
-  background-color: var(--gunmetal);
-  color: var(--cream);
+  background-color: var(--backdrop-n-2nd-text-color);
+  color: var(--accent-text-n-bg-color);
 }
 
 #footer-inner-container {
@@ -12,6 +12,7 @@ footer {
   align-items: center;
   margin: 0 auto;
   box-sizing: border-box;
+  background-color: var(--gunmetal);
 }
 
 #copyright {

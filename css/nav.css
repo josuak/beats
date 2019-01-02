@@ -39,7 +39,7 @@ nav ul {
   overflow-y: hidden;
   white-space: nowrap;
   background-color: #233237;
-  color: white;
+  color: var(--accent-text-n-bg-color);
   text-align: center;
 }
 
