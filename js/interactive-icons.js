@@ -4,7 +4,7 @@
 const s = SVG('canvas').size(200, 200);
 const styles = window.getComputedStyle(document.documentElement);
 const circleBg = styles.getPropertyValue('--accent-text-n-bg-color');
-const outlineColor = styles.getPropertyValue('--lightgold');
+const outlineColor = styles.getPropertyValue('--gold');
 
 // template to create an "iconObject" containing svg-circle and svg-icon-image
 class iconObject {
@@ -84,7 +84,7 @@ let line2 = line(twitter);
 let line3 = line(soundcloud);
 let line4 = line(youtube);
 const lines = [line1, line2, line3, line4];
-const lineColor = styles.getPropertyValue('--lightmetal');
+const lineColor = styles.getPropertyValue('--gunmetal');
 
 for (let i = 0; i < 4; i++) {
   /* move lines to the back of the canvas /
@@ -167,17 +167,18 @@ $(window).scroll(() => {
       inView = false;
       // svg is out of view, make invisible for next animation to start fresh.
       for (let i = 0; i < 4; i++) {
-        // resetting all the values for the next animation
-        let currentIcon = iconObjects[i];
         // clear all lined up intervals so there're no overlapping animations
         clearInterval(animationTimers[i]);
-        lines[i].stop(true, true)
-                .attr('opacity', 0)
-                .plot(currentIcon.cx,
-                      currentIcon.cy,
-                      currentIcon.cx,
-                      currentIcon.cy);
+        lines[i].stop(true, true);
+        lines[i].attr('opacity', 0);
+        // resetting all the values for the next animation
+        let currentIcon = iconObjects[i];
+        let cx = currentIcon.cx;
+        let cy = currentIcon.cy;
+        lines[i].plot(cx, cy, cx, cy);
         currentIcon.group.attr('opacity', 0);
+        currentIcon.group.stop(true, true);
+        currentIcon.group.scale(1, 1);
       }
     }
   }

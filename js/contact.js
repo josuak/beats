@@ -27,8 +27,7 @@ $('#contact form').on('submit', function(event) {
       preventSubmit = false;
     }, 3000);
   } else {
-    $('#validation').html(
-      '<span class="error-message">don\'t spam bruh</p>');
+    alert('don\'t spam bruh');
   }
 });
 

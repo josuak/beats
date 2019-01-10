@@ -12,12 +12,12 @@ module.exports = function(grunt) {
     uglify: {
       t1: {
         files: {
-          'build/js/all.min.js' : ['js/scrolling.js',
-                                'js/dropdown-box.js',
-                                'js/interactive-icons.js',
-                                'js/slider.js',
-                                'js/get-url-var.js',
-                                'js/contact.js',]
+          'build/js/all.min.js':   ['js/scrolling.js',
+                                    'js/get-url-var.js',
+                                    'js/dropdown-box.js',
+                                    'js/interactive-icons.js',
+                                    'js/slider.js',
+                                    'js/contact.js',]
         }
       }
     },
