@@ -4,7 +4,7 @@
 // loadjs.ready(['jquery', 'svg'], () => {
   const s = SVG('canvas').size(200, 200);
   const styles = window.getComputedStyle(document.documentElement);
-  const circleBg = styles.getPropertyValue('--accent-text-n-bg-color');
+  const circleBg = 'black';
   const outlineColor = styles.getPropertyValue('--gold');
 
   // template to create an "iconObject" containing svg-circle and svg-icon-image
@@ -85,7 +85,7 @@
   let line3 = line(soundcloud);
   let line4 = line(youtube);
   const lines = [line1, line2, line3, line4];
-  const lineColor = styles.getPropertyValue('--gunmetal');
+  const lineColor = styles.getPropertyValue('--cream');
 
   for (let i = 0; i < 4; i++) {
     /* move lines to the back of the canvas /

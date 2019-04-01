@@ -2,9 +2,9 @@
   overflow: hidden;
   margin-bottom: 10px;
   border-radius: 10px;
-  border: solid 1px;
-  background-color: var(--accent-text-n-bg-color);
-  color: var(--backdrop-n-2nd-text-color);
+  border: solid 1px var(--cream);
+  background: var(--grey);
+  color: white;
 }
 
 .dropdown-box .chevron {
@@ -15,41 +15,43 @@
 
 .dropdown-box .chevron.up {
   transform: translate(0, var(--chevron-translate)) rotateX(180deg) rotateZ(45deg);
-  animation: fade-in-out .5s linear;
+/*  animation: fade-in-out .5s linear;*/
 }
 
 .dropdown-box .chevron.down {
   transform: translate(0, var(--chevron-translate-)) rotateZ(45deg);
-  animation: fade-out-in .5s linear;
+/*  animation: fade-out-in .5s linear;*/
 }
 
+/*
 @keyframes fade-in-out {
   0% {
-    border-color: var(--lightmetal);
+    border-color: var(--gold);
   }
   
   50% {
-    border-color: var(--lightgold);
+    border-color: var(--lightred);
   }
   
   100% {
-    border-color: var(--lightmetal);
+    border-color: var(--gold);
   }
 }
 
 @keyframes fade-out-in {
   0% {
-    border-color: var(--lightmetal);
+    border-color: var(--gold);
   }
   
   50% {
-    border-color: var(--lightgold);
+    border-color: var(--lightred);
   }
   
   100% {
-    border-color: var(--lightmetal);
+    border-color: var(--gold);
   }
 }
+*/
 
 .question-container {
   padding: 7px calc(7px * 1.3535) 7px 7px;
@@ -70,8 +72,8 @@
 }
 
 .answer-container {
-  background: linear-gradient(to top left, var(--lightmetal), var(--gunmetal));
-  color: var(--main-content-bg);
+  background: linear-gradient(to left, var(--lightgold), var(--gold));
+  color: black;
   z-index: 0;
   padding: 0;
   height: 0px;
@@ -84,4 +86,8 @@
 
 #QnA {
   padding-top: 10px;
+}
+
+#QnA a {
+  color: var(--lightmetal);
 }

@@ -29,16 +29,16 @@
   box-sizing: border-box;
   border-radius: 5px;
   border: solid 1px;
-  background-color: var(--main-content-bg);
+  background-color: var(--darkgrey);
   font-family: inherit;
   font-size: 100%;
   transition: background .5s, border .5s;
-  color: var(--main-text-color);
+  color: var(--cream);
 }
 
 #contact .user-input:focus,
 #contact .user-input:hover {
-  background-color: var(--accent-text-n-bg-color);
+  background-color: var(--grey);
   border: solid 1px var(--gold);
   border-radius: 5px;
 }
@@ -52,7 +52,7 @@
   display: block;
   margin-bottom: 5px;
   text-transform: uppercase;
-  color: var(--main-text-color);
+  color: white;
 }
 
 #contact .submit-container {
@@ -68,7 +68,7 @@
   border-radius: 5px;
   border: solid 1px var(--gold);
   background-color: var(--gunmetal);
-  color: var(--accent-text-n-bg-color);
+  color: var(--cream);
   float: right;
   cursor: pointer;
   transition: all .5s;
@@ -76,7 +76,7 @@
 
 #contact input[name="submit"]:hover {
   color: var(--gunmetal);
-  background-color: var(--accent-text-n-bg-color);
+  background-color: var(--cream);
 }
 
 #contact #validation {

@@ -4,12 +4,12 @@ header {
   align-items: center;
   flex-direction: column;
   height: 280px;
-  background-color: var(--backdrop-n-2nd-text-color);
-	background-image: url(../img/header_bg.png);
-	background-size: 500px ;
-	background-repeat: no-repeat;
-	background-position: center;
-	color: var(--gold);
+  background: var(--red);
+  background-image: url(../img/header_bg.png);
+  background-size: 500px ;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: var(--gold);
 }
 
 h1 {

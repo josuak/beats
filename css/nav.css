@@ -8,18 +8,18 @@ nav li {
 }
 
 nav li:hover {
-  color: #d1af6c;
+  color: var(--gold);
   cursor: pointer;
 }
 
 nav li.active {
-  color: #d1af6c;
+  color: var(--gold);
 }
 
 #pos-indicator {
   position: relative;
   height: 3px;
-  background-color: #d1af6c;
+  background-color: var(--gold);
   width: 100px;
   transition: .25s;
   top: 8px;
@@ -38,8 +38,8 @@ nav ul {
   overflow-x: auto;
   overflow-y: hidden;
   white-space: nowrap;
-  background-color: #233237;
-  color: var(--accent-text-n-bg-color);
+  background: linear-gradient(var(--gunmetal), var(--lightmetal));
+  color: var(--cream);
   text-align: center;
 }
 

@@ -20,6 +20,7 @@
           linkColor: '#d1af6c',
           cards: 'hidden',
           conversation: 'none',
+          theme: 'dark',
         }
       );
     }

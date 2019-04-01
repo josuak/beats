@@ -1,12 +1,22 @@
 #mission-container {
   padding: 1em;
-  padding-top: 0;
   text-align: left;
   font-size: 18px;
   font-style: normal;
-  color: var(--main-text-color)
+  color: var(--cream);
+  background-color: var(--grey);
+  border-radius: 15px;
+  overflow: auto;
 }
 
 #mission-container p {
-  margin: 1em 0;
+  margin: 0.5em 0 0.5em 0;
+}
+
+#mission-container p:last-child {
+  margin: 0.5em 0 0 0;
+}
+
+#mission-container p:first-child {
+  margin: 0 0 0.5em 0;
 }

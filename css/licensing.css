@@ -17,10 +17,10 @@
   text-align: center;
   display: flex;
   flex-direction: column;
-  background-color: var(--accent-text-n-bg-color);
+  background-color: var(--grey);
   margin: 5px;
   box-sizing: border-box;
-  color: var(--backdrop-n-2nd-text-color);
+  color: white;
 }
 
 .license-item h4 {
@@ -29,7 +29,7 @@
   font-weight: normal;
   text-transform: uppercase;
   background: linear-gradient(to top left, var(--lightmetal), var(--gunmetal));
-  color: var(--accent-text-n-bg-color);
+  color: white;
   border-bottom: solid 5px var(--gold);
 }
 
