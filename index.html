@@ -12,12 +12,28 @@
     <!--<link href="css/mission.css" type="text/css" rel="stylesheet" >-->
     <!--<link href="css/licensing.css" type="text/css" rel="stylesheet">-->
     <!--<link href="css/store.css" type="text/css" rel="stylesheet">-->
-    <!--<link href="css/qna.css" type="text/css" rel="stylesheet" />-->
+    <!-- <link href="css/qna.css" type="text/css" rel="stylesheet" />-->
     <!--<link href="css/main.css" type="text/css" rel="stylesheet" />-->
     <!--<link href="css/social.css" type="text/css" rel="stylesheet" />-->
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/2.7.1/svg.min.js" integrity="sha256-DSAVgUuz6YXM7pUOvn+Lc40Ek6cWvBgCBU1jsx72Dqg=" crossorigin="anonymous"></script>
-    <script defer src="js/all.min.js"></script>
+    <!-- LOADJS FUNCTION -->
+    <script>
+      loadjs=function(){var l=function(){},c={},f={},u={};function o(e,n){if(e){var t=u[e];if(f[e]=n,t)for(;t.length;)t[0](e,n),t.splice(0,1)}}function s(e,n){e.call&&(e={success:e}),n.length?(e.error||l)(n):(e.success||l)(e)}function h(t,r,i,c){var o,s,e=document,n=i.async,f=(i.numRetries||0)+1,u=i.before||l,a=t.replace(/^(css|img)!/,"");c=c||0,/(^css!|\.css$)/.test(t)?(o=!0,(s=e.createElement("link")).rel="stylesheet",s.href=a):/(^img!|\.(png|gif|jpg|svg)$)/.test(t)?(s=e.createElement("img")).src=a:((s=e.createElement("script")).src=t,s.async=void 0===n||n),!(s.onload=s.onerror=s.onbeforeload=function(e){var n=e.type[0];if(o&&"hideFocus"in s)try{s.sheet.cssText.length||(n="e")}catch(e){18!=e.code&&(n="e")}if("e"==n&&(c+=1)<f)return h(t,r,i,c);r(t,n,e.defaultPrevented)})!==u(t,s)&&e.head.appendChild(s)}function t(e,n,t){var r,i;if(n&&n.trim&&(r=n),i=(r?t:n)||{},r){if(r in c)throw"LoadJS";c[r]=!0}!function(e,r,n){var t,i,c=(e=e.push?e:[e]).length,o=c,s=[];for(t=function(e,n,t){if("e"==n&&s.push(e),"b"==n){if(!t)return;s.push(e)}--c||r(s)},i=0;i<o;i++)h(e[i],t,n)}(e,function(e){s(i,e),o(r,e)},i)}return t.ready=function(e,n){return function(e,t){e=e.push?e:[e];var n,r,i,c=[],o=e.length,s=o;for(n=function(e,n){n.length&&c.push(e),--s||t(c)};o--;)r=e[o],(i=f[r])?n(r,i):(u[r]=u[r]||[]).push(n)}(e,function(e){s(n,e)}),t},t.done=function(e){o(e,[])},t.reset=function(){c={},f={},u={}},t.isDefined=function(e){return e in c},t}();</script>
+    <!-- END LOADJS FUNCTION -->
+    <script>
+      let trackId;
+      if (window.location.search.includes('trackId')) {
+        trackId = true;
+      } else {
+        trackId = false;
+      }
+      loadjs('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js', 'jquery');
+      loadjs('https://cdnjs.cloudflare.com/ajax/libs/svg.js/2.7.1/svg.min.js', 'svg');
+      document.addEventListener('DOMContentLoaded', () => {
+        loadjs.ready(['jquery', 'svg'], function() {
+          loadjs('js/deferred.min.js');
+        });
+      });
+    </script>
     <meta name="google-site-verification" content="Nui4-0p1TS2IegQqRqAP2CyW97wSUT3rUTJg5m1Cyqw" />
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-131745294-1"></script>
@@ -68,7 +84,15 @@
       <section id="store">
         <h2>Catalog</h2>
         <!--<div class="chevron down"></div>-->
-        <iframe src="https://player.beatstars.com/?storeId=28517" scrolling="no" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0"></iframe>
+        <iframe id="beatstore" src="" scrolling="no" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0"></iframe>
+        <script>
+        if (trackId) {
+          let newUrl = 'https://player.beatstars.com/?storeId=28517&' + window.location.search.substr(1);
+          document.getElementById('beatstore').setAttribute('src', newUrl);
+        } else {
+          document.getElementById('beatstore').setAttribute('src', 'https://player.beatstars.com/?storeId=28517');
+        }
+        </script>
       </section>
       
       <section id="licensing">
@@ -77,7 +101,7 @@
         <div id="licenses-container">
           
           <div id="mp3" class="license-item">
-            <h4>MP3 lease</h4>
+            <h4>MP3 License</h4>
             <ul>
               <li>Receive untagged &amp; unmastered file (MP3)</li>
               <li>Earn money from streaming (e.g. Spotify, Apple Music)</li>
@@ -89,7 +113,7 @@
           </div>
 
           <div id="wav" class="license-item">
-            <h4>WAV lease</h4>
+            <h4>WAV License</h4>
             <ul>
               <li>Receive untagged &amp; unmastered files (WAV &amp; MP3)</li>
               <li>Earn money from streaming (e.g. Spotify, Apple Music)</li>
@@ -101,7 +125,7 @@
           </div>
 
           <div id="trackout" class="license-item">
-            <h4>Trackout lease</h4>
+            <h4>Trackout License</h4>
             <ul>
               <li>Receive untagged &amp; unmastered files (Track Stems, WAV &amp; MP3)</li>
               <li>Earn money from streaming (e.g. Spotify, Apple Music)</li>
@@ -135,22 +159,41 @@
         
         <div class="dropdown-box">
           
-          <div class="question dropdown-label">
+          <div class="question-container">
             
-            <div class="question-text">Q: Will the beat have any voice tags (e.g. "Jozu going crazy") after purchase.</div>
+            <div class="question-text">Q: Will my beat have any voice tags (e.g. "Jozu going crazy") after purchase?</div>
             
             <div class="chevron-container">
               <span class="chevron"></span>
             </div>
           </div>
           
-          <p class="answer dropdown-content">A: No. All beats will be delivered completely untagged with every lease. A single tag is included with the trackouts though, if you'd like to add it (I'd appreciate it).</p>
+          <div class="answer-container">
+            <p class="answer-text">A: No. All beats will be delivered completely untagged with every lease. A single tag is included with the trackouts though, if you'd like to add it (I'd appreciate it).</p>
+          </div>
           
         </div>
         
         <div class="dropdown-box">
           
-          <div class="question dropdown-label">
+          <div class="question-container">
+            
+            <div class="question-text">Q: Is there a limit on how many times my song can be streamed/sold?</div>
+            
+            <div class="chevron-container">
+              <span class="chevron"></span>
+            </div>
+          </div>
+          
+          <div class="answer-container">
+            <p class="answer-text">A: No. Every license, exclusive or non-exclusive, is <em>unlimited</em> regarding the number of streams, sales, radio stations and paid performances.</p>
+          </div>
+          
+        </div>
+        
+        <div class="dropdown-box">
+          
+          <div class="question-container">
             
             <div class="question-text">Q: What's the difference between MP3 and WAV?
             </div>
@@ -160,13 +203,15 @@
             </div>
           </div>
           
-          <p class="answer dropdown-content">A: The MP3 files you'll get from us are high quality (320kbps), but still MP3 files are inherently <em>compressed</em> and therefore will have a slight quality loss. WAV files on the other hand are inherently <em>uncompressed/lossless</em>, meaning there's no loss in quality. Also MP3 files have a weird split second delay in the beginning, which can make it tedious to line up properly in your session.</p>
+          <div class="answer-container">
+            <p class="answer-text">A: The MP3 files you'll get from us are high quality (320kbps), but still MP3 files are inherently <em>compressed</em> and therefore will have a slight quality loss. WAV files on the other hand are inherently <em>uncompressed/lossless</em>, meaning there's no loss in quality. Also MP3 files have a weird split second delay in the beginning, which can make it tedious to line up properly in your session.</p>
+          </div>
           
         </div>
         
         <div class="dropdown-box">
           
-          <div class="question dropdown-label">
+          <div class="question-container">
             
             <div class="question-text">Q: Do you run any deals/discounts?
             </div>
@@ -176,13 +221,15 @@
             </div>
           </div>
           
-          <p class="answer dropdown-content">A: Generally no. But I might run temporary discounts from time to time, follow me on <a href="#social" class="inside-link">social media</a> so you won't miss it. And since I don't run any bulk deals, you can <a href="#contact" class="inside-link">contact</a> me personally if you are looking to purchase multiple beats (3+) at once. We can then work out a better deal for you.</p>
+          <div class="answer-container">
+            <p class="answer-text">A: Generally no. But I might run temporary discounts from time to time, follow me on <a href="#social" class="inside-link">social media</a> so you won't miss it. And since I don't run any bulk deals, you can <a href="#contact" class="inside-link">contact</a> me personally if you are looking to purchase multiple beats (3+) at once. We can then work out a better deal for you.</p>
+          </div>
           
         </div>
         
         <div class="dropdown-box">
           
-          <div class="question dropdown-label">
+          <div class="question-container">
             
             <div class="question-text">Q: Do you also offer mixing services?
             </div>
@@ -192,13 +239,15 @@
             </div>
           </div>
           
-          <p class="answer dropdown-content">A: Yes. Contact me on any of my <a href="#social" class="inside-link">social media accounts</a> or via <a href="#contact" class="inside-link">email</a> for more info.</p>
+          <div class="answer-container">
+            <p class="answer-text">A: Yes. Contact me on any of my <a href="#social" class="inside-link">social media accounts</a> or via <a href="#contact" class="inside-link">email</a> for more info.</p>
+          </div>
           
         </div>
         
         <div class="dropdown-box">
           
-          <div class="question dropdown-label">
+          <div class="question-container">
             
             <div class="question-text">Q: Do you use samples?
             </div>
@@ -208,13 +257,15 @@
             </div>
           </div>
           
-          <p class="answer dropdown-content">A: Very rarely. And if I do, they're completely royalty-free.</p>
+          <div class="answer-container">
+            <p class="answer-text">A: Very rarely. And if I do, they're completely royalty-free.</p>
+          </div>
           
         </div>
         
         <div class="dropdown-box">
           
-          <div class="question dropdown-label">
+          <div class="question-container">
             
             <div class="question-text">Q: Where can I check out some tracks you produced?
             </div>
@@ -224,13 +275,15 @@
             </div>
           </div>
           
-          <p class="answer dropdown-content">A: I created this <a href="https://www.youtube.com/playlist?list=PLs0Qazn-cO_3O_6RXmCdaVOUSjBO3B2Lx">playlist</a> on YouTube with a couple songs we produced. If you made a song using one of our beats and it's not in this playlist, feel free to send me the link so I can add it.</p>
+          <div class="answer-container">
+            <p class="answer-text">A: I created this <a href="https://www.youtube.com/playlist?list=PLs0Qazn-cO_3O_6RXmCdaVOUSjBO3B2Lx">playlist</a> on YouTube with a couple songs we produced. If you made a song using one of our beats and it's not in this playlist, feel free to send me the link so I can add it.</p>
+          </div>
         
         </div>
         
         <div class="dropdown-box">
           
-          <div class="question dropdown-label">
+          <div class="question-container">
             
             <div class="question-text">Q: Can I get a custom made beat?
             </div>
@@ -240,7 +293,9 @@
             </div>
           </div>
           
-          <p class="answer dropdown-content">A: At the moment I'm busy keeping up with producing beats for me to upload. So I can't promise you that I'll be able to make it, but if you are a comitted artist and know what kind of beat you'd like (preferably with examples), I'm sure we can work something out. Just contact me through the <a href="#contact" class="inside-link">contact form</a> or via <a href="#social" class="inside-link">social media</a>.</p>
+          <div class="answer-container">
+            <p class="answer-text">A: At the moment I'm busy keeping up with producing beats for me to upload. So I can't promise you that I'll be able to make it, but if you are a comitted artist and know what kind of beat you'd like (preferably with examples), I'm sure we can work something out. Just contact me through the <a href="#contact" class="inside-link">contact form</a> or via <a href="#social" class="inside-link">social media.</a></p>
+          </div>
           
         </div>
       
@@ -391,6 +446,9 @@
         return t;
       }(document, "script", "twitter-wjs"));
     </script>
+    <!-- SCROLL NAV SCRIPT -->
+    <script>loadjs.ready("jquery",()=>{const t=$("nav ul li"),e=$("nav ul");function i(){let e=$(document),i=e.scrollTop(),o=$(window).innerHeight(),n=e.height();i>$("#contact").offset().top-o/2||i>n-100?t.eq(5).is(".active")||t.eq(5).trigger("newActive"):i>$("#social").offset().top-o/2?t.eq(4).is(".active")||t.eq(4).trigger("newActive"):i>$("#mission").offset().top-o/2?t.eq(3).is(".active")||t.eq(3).trigger("newActive"):i>$("#QnA").offset().top-o/2?t.eq(2).is(".active")||t.eq(2).trigger("newActive"):i>$("#licensing").offset().top-o/2&&i>50?t.eq(1).is(".active")||t.eq(1).trigger("newActive"):t.eq(0).is(".active")||(t.removeClass("active"),t.eq(0).trigger("newActive"))}let o,n=!1;function c(t,e){clearTimeout(o),n=!0,o=setTimeout(function(){n=!1,!0===e&&i()},t)}const s=$("section");function r(e){c(550,!1),$("html, body").stop(!0,!1).animate({scrollTop:s.eq(e).offset().top-50},500),t.eq(e).trigger("newActive")}t.each(function(t){$(this).on("click",function(){c(550,!1),$("html, body").stop(!0,!1).animate({scrollTop:s.eq(t).offset().top-50},500),$(this).trigger("newActive")})}),$(".inside-link").on("click",function(t){t.preventDefault(),"#social"==$(this).attr("href")&&r(4),"#contact"==$(this).attr("href")&&r(5)}),$(document).on("scroll",function(){!1===n&&i()}),t.on("newActive",function(){let i=$(this);t.removeClass("active"),i.addClass("active");let o=i.position().left+e.scrollLeft(),n=i.outerWidth(),c=o+n/2-$(window).width()/2;e.stop(!0,!1).animate({scrollLeft:c},500,"linear"),$("#pos-indicator").css({left:o,width:n})}),t.eq(0).trigger("newActive"),t.css("transition",".25s");document.getElementById("beatstore").onload=(()=>{trackId&&r(0)})});</script>
+    <!-- SCROLL NAV SCRIPT END -->
     <!-- <script src="js/velocity.min.js"></script> -->
   </body>
 </html>

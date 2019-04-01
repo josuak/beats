@@ -1,5 +1,4 @@
 #store h2 {
-  /*display: inline-block;*/
   margin: 0 0 15px 0;
 }
 
@@ -7,10 +6,6 @@
   display: flex;
   margin: 0 auto;
   box-sizing: border-box;
-} 
-
-#store .chevron {
-  margin: 0 0 0 10px;
 }
 
 #store {

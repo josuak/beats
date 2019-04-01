@@ -51,7 +51,7 @@
   }
 }
 
-.question {
+.question-container {
   padding: 7px calc(7px * 1.3535) 7px 7px;
   z-index: 2;
   cursor: pointer;
@@ -69,13 +69,17 @@
   align-items: flex-end;
 }
 
-.answer {
-  padding: 7px;
+.answer-container {
   background: linear-gradient(to top left, var(--lightmetal), var(--gunmetal));
   color: var(--main-content-bg);
   z-index: 0;
-  border-bottom-right-radius: 5px;
- 	display: none; 
+  padding: 0;
+  height: 0px;
+  transition: height .5s ease-in-out;
+}
+
+.answer-text {
+  padding: 7px;
 }
 
 #QnA {

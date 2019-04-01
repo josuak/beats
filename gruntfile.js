@@ -12,19 +12,17 @@ module.exports = function(grunt) {
     uglify: {
       t1: {
         files: {
-          'build/js/all.min.js':   ['js/scrolling.js',
-                                    'js/get-url-var.js',
-                                    'js/dropdown-box.js',
+          'build/js/critical.min.js':   ['js/scrolling.js',]
+        }
+      },
+      t2: {
+        files: {
+          'build/js/deferred.min.js':   ['js/dropdown-box.js',
                                     'js/interactive-icons.js',
                                     'js/slider.js',
                                     'js/contact.js',]
         }
       }
-    },
-    
-    'jquery-ready': {
-      path: 'build/js/all.min.js',
-      runSync: false,
     },
     
     cssmin: {
@@ -61,7 +59,8 @@ module.exports = function(grunt) {
     copy: {
       js: {
         files: [
-          {src: "build/js/all.min.js", dest: "js/all.min.js"},
+          {src: "build/js/critical.min.js", dest: "js/critical.min.js"},
+          {src: "build/js/deferred.min.js", dest: "js/deferred.min.js"},
         ]
       },
       css: {
@@ -97,14 +96,13 @@ module.exports = function(grunt) {
   });
 
   // Set default task(s)
-  grunt.registerTask('default', ['uglify', 'jquery-ready', 'cssmin', 'htmlmin', 'copy']);
-  grunt.registerTask('js', ['uglify', 'jquery-ready','copy:js']);
+  grunt.registerTask('default', ['uglify', 'cssmin', 'htmlmin', 'copy']);
+  grunt.registerTask('js', ['uglify', 'copy:js']);
   grunt.registerTask('css', ['cssmin', 'copy:css']);
   
   // Load grunt plugins
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-uglify-es');
-  grunt.loadNpmTasks('grunt-jquery-ready');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-htmlmin');
   grunt.loadNpmTasks('grunt-contrib-copy');
