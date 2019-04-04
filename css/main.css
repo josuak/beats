@@ -51,6 +51,7 @@ section {
   padding: 0 15px 15px 15px;
   box-sizing: border-box;
   background-color: var(--darkgrey);
+  color: var(--cream);
 }
 
 .chevron {

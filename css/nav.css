@@ -39,7 +39,7 @@ nav ul {
   overflow-y: hidden;
   white-space: nowrap;
   background: linear-gradient(var(--gunmetal), var(--lightmetal));
-  color: var(--cream);
+  color: white;
   text-align: center;
 }
 

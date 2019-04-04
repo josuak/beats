@@ -24,16 +24,16 @@
 
 #contact .user-input {
   display: block;
+  color: var(--cream);
   padding: 5px;
   width: 100%;
   box-sizing: border-box;
   border-radius: 5px;
-  border: solid 1px;
+  border: solid 1px var(--cream);
   background-color: var(--darkgrey);
   font-family: inherit;
   font-size: 100%;
   transition: background .5s, border .5s;
-  color: var(--cream);
 }
 
 #contact .user-input:focus,
@@ -52,7 +52,6 @@
   display: block;
   margin-bottom: 5px;
   text-transform: uppercase;
-  color: white;
 }
 
 #contact .submit-container {
@@ -68,7 +67,7 @@
   border-radius: 5px;
   border: solid 1px var(--gold);
   background-color: var(--gunmetal);
-  color: var(--cream);
+  color: white;
   float: right;
   cursor: pointer;
   transition: all .5s;
