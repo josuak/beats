@@ -7,8 +7,7 @@
 }
 
 #contact .text-input-container,
-#contact .textarea-container,
-#contact #validation {
+#contact .textarea-container {
   flex-grow: 1;
   box-sizing: border-box;
   margin: 5px 10px;
@@ -78,8 +77,18 @@
   background-color: var(--cream);
 }
 
-#contact #validation {
+#validation {
+  margin: 5px 10px 0 10px;
+  display: block;
+  width: 100%;
   text-align: center;
+}
+
+#recaptcha {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin: 5px 10px 0 10px;
 }
 
 #contact .input-error {
